@@ -1,0 +1,129 @@
+[gd_scene load_steps=18 format=3 uid="uid://cex5xkfxhcxd1"]
+
+[ext_resource type="Texture2D" uid="uid://ddarc1uuq10u2" path="res://Assets/Sprites/GUI/EscapeBaton.png" id="1_1tcoj"]
+[ext_resource type="Texture2D" uid="uid://cdojdjxruwhxy" path="res://Assets/Sprites/GUI/DeleteBaton.png" id="2_3uo1g"]
+[ext_resource type="Texture2D" uid="uid://8navmrf0aftb" path="res://Assets/Sprites/GUI/F1Baton.png" id="3_c0srt"]
+[ext_resource type="Texture2D" uid="uid://dukl2ko81ogsd" path="res://Assets/Sprites/GUI/BlockSelectionBaton.png" id="4_2ii18"]
+[ext_resource type="Texture2D" uid="uid://tdh18bcd0p0e" path="res://Assets/Sprites/GUI/ShiftBaton.png" id="5_k13ne"]
+[ext_resource type="Texture2D" uid="uid://1iwywqjyom81" path="res://Assets/Sprites/GUI/BBaton.png" id="6_wmfcl"]
+[ext_resource type="Texture2D" uid="uid://cwb5j8gt2yc4x" path="res://Assets/Sprites/GUI/RemoveBaton.png" id="7_4k1j1"]
+[ext_resource type="Texture2D" uid="uid://iiewe0bqd0v1" path="res://Assets/Sprites/GUI/AddBaton.png" id="8_j3g3h"]
+[ext_resource type="Texture2D" uid="uid://bcdq8afmpi5aa" path="res://Assets/Sprites/GUI/OutBaton.png" id="9_u6bix"]
+[ext_resource type="Texture2D" uid="uid://bforo5gjxpcuh" path="res://Assets/Sprites/GUI/InBaton.png" id="10_nfndq"]
+[ext_resource type="Texture2D" uid="uid://bchft4wlp37kd" path="res://Assets/Sprites/GUI/cursor.png" id="11_sq0rb"]
+[ext_resource type="Script" uid="uid://bhjrgaqfl8gyf" path="res://Scripts/GUI/cursor.gd" id="12_ukaf3"]
+[ext_resource type="Script" uid="uid://bamksvwrm2ese" path="res://Scripts/GUI/joystick.gd" id="13_ybjw7"]
+[ext_resource type="Script" uid="uid://dwhdljyceqmo" path="res://Scripts/GUI/joyknob.gd" id="14_55uu4"]
+[ext_resource type="Texture2D" uid="uid://cmqqie3qqlik1" path="res://Assets/Sprites/Nothing48x48.png" id="15_f0umg"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_thvrb"]
+radius = 48.0
+height = 96.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_u1lap"]
+radius = 8.0
+height = 16.0
+
+[node name="MobileControls" type="Control"]
+z_index = 999
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Quit" type="TouchScreenButton" parent="."]
+texture_normal = ExtResource("1_1tcoj")
+action = "quit"
+visibility_mode = 1
+
+[node name="DeleteBouncy_onurBs" type="TouchScreenButton" parent="."]
+position = Vector2(80, 0)
+texture_normal = ExtResource("2_3uo1g")
+action = "deleteBouncy_onurBs"
+visibility_mode = 1
+
+[node name="F1" type="TouchScreenButton" parent="."]
+position = Vector2(176, 0)
+texture_normal = ExtResource("3_c0srt")
+action = "labelToggle"
+visibility_mode = 1
+
+[node name="I" type="TouchScreenButton" parent="."]
+position = Vector2(280, 0)
+texture_normal = ExtResource("4_2ii18")
+action = "showBlocks"
+visibility_mode = 1
+
+[node name="Shift" type="TouchScreenButton" parent="."]
+position = Vector2(1027, 505)
+texture_normal = ExtResource("5_k13ne")
+action = "shift"
+visibility_mode = 1
+
+[node name="SpawnBouncy_onurB" type="TouchScreenButton" parent="."]
+position = Vector2(1027, 385)
+texture_normal = ExtResource("6_wmfcl")
+action = "spawnBouncy_onurB"
+visibility_mode = 1
+
+[node name="RemoveBlock" type="TouchScreenButton" parent="."]
+position = Vector2(907, 385)
+texture_normal = ExtResource("7_4k1j1")
+action = "removeBlock"
+visibility_mode = 1
+
+[node name="AddBlock" type="TouchScreenButton" parent="."]
+position = Vector2(907, 276)
+texture_normal = ExtResource("8_j3g3h")
+action = "addBlock"
+visibility_mode = 1
+
+[node name="CamOut" type="TouchScreenButton" parent="."]
+position = Vector2(1024, 0)
+texture_normal = ExtResource("9_u6bix")
+action = "camOut"
+visibility_mode = 1
+
+[node name="CamIn" type="TouchScreenButton" parent="."]
+position = Vector2(905, 0)
+texture_normal = ExtResource("10_nfndq")
+action = "camIn"
+visibility_mode = 1
+
+[node name="cursor" type="Sprite2D" parent="."]
+z_index = 999
+position = Vector2(576, 324)
+scale = Vector2(2, 2)
+texture = ExtResource("11_sq0rb")
+script = ExtResource("12_ukaf3")
+
+[node name="Joystick" type="Node2D" parent="."]
+position = Vector2(120, 544)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("13_ybjw7")
+
+[node name="Joyring" type="MeshInstance2D" parent="Joystick"]
+self_modulate = Color(0.133333, 0.168627, 0.270588, 0.176471)
+mesh = SubResource("SphereMesh_thvrb")
+
+[node name="Joyknob" type="MeshInstance2D" parent="Joystick"]
+self_modulate = Color(1, 0.564706, 0, 1)
+mesh = SubResource("SphereMesh_u1lap")
+script = ExtResource("14_55uu4")
+
+[node name="Button" type="TouchScreenButton" parent="Joystick"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(-48, -47.3333)
+scale = Vector2(2, 1.98611)
+texture_normal = ExtResource("15_f0umg")
+
+[connection signal="pressed" from="Joystick/Button" to="Joystick/Joyknob" method="_on_button_down"]
+[connection signal="released" from="Joystick/Button" to="Joystick/Joyknob" method="_on_button_up"]

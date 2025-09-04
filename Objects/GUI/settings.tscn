@@ -1,0 +1,95 @@
+[gd_scene load_steps=2 format=3 uid="uid://bucg5gu1hc86y"]
+
+[ext_resource type="Script" uid="uid://cispgdh0rd3i6" path="res://Scripts/GUI/settings.gd" id="1_jr6ou"]
+
+[node name="Settings" type="Window"]
+initial_position = 1
+size = Vector2i(300, 445)
+script = ExtResource("1_jr6ou")
+
+[node name="Collision" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Collision: true"
+
+[node name="MinSpeed" type="LineEdit" parent="."]
+offset_top = 105.0
+offset_right = 296.0
+offset_bottom = 136.0
+placeholder_text = "MinSpeed: 1.0"
+
+[node name="MaxSpeed" type="LineEdit" parent="."]
+offset_top = 139.0
+offset_right = 297.0
+offset_bottom = 170.0
+placeholder_text = "MaxSpeed: 300.0"
+
+[node name="MinJumpHeight" type="LineEdit" parent="."]
+offset_top = 173.0
+offset_right = 297.0
+offset_bottom = 204.0
+placeholder_text = "MinJumpHeight: 20.0"
+
+[node name="MaxJumpHeight" type="LineEdit" parent="."]
+offset_top = 207.0
+offset_right = 298.0
+offset_bottom = 238.0
+placeholder_text = "MaxJumpHeight: 300.0"
+
+[node name="MinGravity" type="LineEdit" parent="."]
+offset_top = 241.0
+offset_right = 298.0
+offset_bottom = 272.0
+placeholder_text = "MinGravity: 0.1"
+
+[node name="MaxGravity" type="LineEdit" parent="."]
+offset_top = 275.0
+offset_right = 298.0
+offset_bottom = 306.0
+placeholder_text = "MaxGravity: 25.0"
+
+[node name="MinRGBA" type="LineEdit" parent="."]
+offset_top = 308.0
+offset_right = 298.0
+offset_bottom = 339.0
+placeholder_text = "MinRGBA: 0.0 0.0 0.0 0.3"
+
+[node name="MaxRGBA" type="LineEdit" parent="."]
+offset_top = 342.0
+offset_right = 297.0
+offset_bottom = 373.0
+placeholder_text = "MaxRGBA: 1.0 1.0 1.0 1.0"
+
+[node name="MinMaxJumps" type="LineEdit" parent="."]
+offset_top = 376.0
+offset_right = 298.0
+offset_bottom = 407.0
+placeholder_text = "MinMaxJumps: 1"
+
+[node name="MaxMaxJumps" type="LineEdit" parent="."]
+offset_top = 410.0
+offset_right = 297.0
+offset_bottom = 441.0
+placeholder_text = "MaxMaxJumps: 100"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 31.0
+offset_right = 296.0
+offset_bottom = 76.0
+text = "type most values as Floats (0.0 and etc)
+RGBA values like this:
+0.0 0.0 0.0 0.0"
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="Collision" to="." method="_on_collision_pressed"]
+[connection signal="text_submitted" from="MinSpeed" to="." method="_on_min_speed_text_submitted"]
+[connection signal="text_submitted" from="MaxSpeed" to="." method="_on_max_speed_text_submitted"]
+[connection signal="text_submitted" from="MinJumpHeight" to="." method="_on_min_jump_height_text_submitted"]
+[connection signal="text_submitted" from="MaxJumpHeight" to="." method="_on_max_jump_height_text_submitted"]
+[connection signal="text_submitted" from="MinGravity" to="." method="_on_min_gravity_text_submitted"]
+[connection signal="text_submitted" from="MaxGravity" to="." method="_on_max_gravity_text_submitted"]
+[connection signal="text_submitted" from="MinRGBA" to="." method="_on_min_rgba_text_submitted"]
+[connection signal="text_submitted" from="MaxRGBA" to="." method="_on_max_rgba_text_submitted"]
+[connection signal="text_submitted" from="MinMaxJumps" to="." method="_on_min_max_jumps_text_submitted"]
+[connection signal="text_submitted" from="MaxMaxJumps" to="." method="_on_max_max_jumps_text_submitted"]

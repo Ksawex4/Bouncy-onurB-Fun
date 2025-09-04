@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3hf2u5ffwmyj"]
+
+[ext_resource type="Script" uid="uid://bkqp2lkhtc6g5" path="res://Scripts/GUI/camera_2d.gd" id="1_u0e42"]
+[ext_resource type="PackedScene" uid="uid://cex5xkfxhcxd1" path="res://Objects/GUI/mobile_controls.tscn" id="2_4kmw6"]
+
+[node name="Camera2D" type="Camera2D"]
+process_mode = 3
+script = ExtResource("1_u0e42")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 1.0
+offset_top = 61.0
+offset_right = 332.0
+offset_bottom = 318.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "escape - quit game
+B - spawn Bouncy onurB at mouse position
+Delete - delete all bouncy onurbs
+WASD or arrow keys to move camera
+[_-] key- move camera out
+[+=] key - move camera in
+Z - place a block
+X- remove a block
+Shift - move/zoom camera faster and spawn onurbs faster
+F1 - hide/show this label
+I - open the selection menu"
+
+[node name="MobileControls" parent="CanvasLayer" instance=ExtResource("2_4kmw6")]

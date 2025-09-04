@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cipx4cumq5yl1"]
+
+[ext_resource type="Texture2D" uid="uid://bixndbwi3canp" path="res://Assets/Sprites/GUI/OneWayBlock.png" id="1_5k7tn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47vho"]
+size = Vector2(32, 20)
+
+[node name="OneWayBlock" type="StaticBody2D" groups=["OneWays"]]
+
+[node name="OneWayBlock" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_5k7tn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_47vho")
+one_way_collision = true
+debug_color = Color(1, 0, 1, 0.419608)

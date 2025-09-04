@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://bm1j36grud74w"]
+
+[ext_resource type="Script" uid="uid://c3dhjkjyi34uh" path="res://Scripts/Characters/bouncy_onurb.gd" id="1_jas06"]
+[ext_resource type="Texture2D" uid="uid://dq5d3fyrmakbo" path="res://Assets/Sprites/Characters/Bouncy_onurB.png" id="2_nkoae"]
+[ext_resource type="AudioStream" uid="uid://cqaakefnkhofw" path="res://Assets/Audio/SFX/winblock.ogg" id="3_tyx5s"]
+[ext_resource type="AudioStream" uid="uid://bn07h8gbcr3ti" path="res://Assets/Audio/SFX/onurbdead.ogg" id="4_m3n8b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_si4gt"]
+size = Vector2(31, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_geypb"]
+size = Vector2(31, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yivf5"]
+size = Vector2(31, 31)
+
+[node name="Bouncy_onurB" type="CharacterBody2D"]
+collision_layer = 8
+script = ExtResource("1_jas06")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_si4gt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_nkoae")
+
+[node name="HitArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
+shape = SubResource("RectangleShape2D_geypb")
+
+[node name="Name" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -38.0
+offset_right = 20.0
+offset_bottom = -15.0
+text = "Bob"
+
+[node name="WinArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinArea"]
+shape = SubResource("RectangleShape2D_yivf5")
+
+[node name="Win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tyx5s")
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_m3n8b")
+
+[connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]
+[connection signal="body_entered" from="WinArea" to="." method="_on_win_area_body_entered"]
+[connection signal="finished" from="Death" to="." method="_on_death_finished"]

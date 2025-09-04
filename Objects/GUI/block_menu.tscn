@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlka6oe6fdbl6"]
+
+[ext_resource type="Script" uid="uid://yx0usscy3ife" path="res://Scripts/GUI/block_menu.gd" id="1_s3yxy"]
+
+[node name="BlockMenu" type="Window"]
+title = "Select Menu"
+initial_position = 1
+size = Vector2i(200, 250)
+script = ExtResource("1_s3yxy")
+
+[node name="Block" type="Button" parent="."]
+offset_top = 2.0
+offset_right = 99.0
+offset_bottom = 47.0
+text = "Block"
+
+[node name="OneWay" type="Button" parent="."]
+offset_left = 101.0
+offset_top = 55.0
+offset_right = 200.0
+offset_bottom = 100.0
+text = "OneWay
+"
+
+[node name="RemoveAllOneWays" type="Button" parent="."]
+offset_left = -1.0
+offset_top = 106.0
+offset_right = 202.0
+offset_bottom = 160.0
+text = "Remove All OneWays
+(will be changed later)"
+
+[node name="Bouncy_onurB" type="Button" parent="."]
+offset_top = 194.0
+offset_right = 99.0
+offset_bottom = 248.0
+text = "Bouncy
+onurB"
+
+[node name="BouncyFighter" type="Button" parent="."]
+offset_left = 100.0
+offset_top = 194.0
+offset_right = 199.0
+offset_bottom = 248.0
+text = "Bouncy
+Fighter
+"
+
+[node name="WinBlock" type="Button" parent="."]
+offset_left = 101.0
+offset_top = 2.0
+offset_right = 200.0
+offset_bottom = 47.0
+text = "WinBlock"
+
+[node name="KillBlock" type="Button" parent="."]
+offset_top = 56.0
+offset_right = 99.0
+offset_bottom = 99.0
+text = "KillBlock
+"
+
+[connection signal="pressed" from="Block" to="." method="_on_block_pressed"]
+[connection signal="pressed" from="OneWay" to="." method="_on_one_way_pressed"]
+[connection signal="pressed" from="RemoveAllOneWays" to="." method="_on_remove_all_one_ways_pressed"]
+[connection signal="pressed" from="Bouncy_onurB" to="." method="_on_bouncy_onur_b_pressed"]
+[connection signal="pressed" from="BouncyFighter" to="." method="_on_bouncy_fighter_pressed"]
+[connection signal="pressed" from="WinBlock" to="." method="_on_win_block_pressed"]
+[connection signal="pressed" from="KillBlock" to="." method="_on_kill_block_pressed"]
