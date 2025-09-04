@@ -5,6 +5,7 @@
 [node name="Settings" type="Window"]
 initial_position = 1
 size = Vector2i(300, 445)
+visible = false
 script = ExtResource("1_jr6ou")
 
 [node name="Collision" type="Button" parent="."]
