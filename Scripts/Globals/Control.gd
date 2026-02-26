@@ -9,6 +9,7 @@ var FollowNode = false
 var node
 var SelectedBounce = "Bouncy_onurB"
 var AndroidPath = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Nova-Games/Bouncy-onurB-Fun/"
+var OnurbCount: int = 0
 
 func _ready() -> void:
 	Map = get_tree().current_scene.get_node("TileMapLayer")
@@ -30,6 +31,18 @@ func _process(_delta: float) -> void:
 		if Input.is_action_pressed("showBlocks"):
 			var BluckMenu = get_tree().current_scene.get_node("BlockMenu")
 			BluckMenu.show()
+		
+		if Input.is_action_just_pressed("SpeedUp"):
+			Engine.time_scale += 0.1
+			Engine.time_scale = snappedf(Engine.time_scale, 0.1)
+			if Engine.time_scale > 10.0:
+				Engine.time_scale = 10.0
+		if Input.is_action_just_pressed("SpeedDown"):
+			Engine.time_scale -= 0.1
+			Engine.time_scale = snappedf(Engine.time_scale, 0.1)
+			if Engine.time_scale < 0.0:
+				Engine.time_scale = 0.0
+		
 	else:
 		Map = get_tree().current_scene.get_node("TileMapLayer")
 
@@ -45,6 +58,7 @@ func spawnBouncy():
 		instance.position = mousePos
 
 func deleteOnurbs():
+	OnurbCount = 0
 	for child in get_tree().current_scene.get_children():
 			if child.scene_file_path.get_file() == "bouncy_onurb.tscn":
 				child.queue_free()
@@ -58,10 +72,6 @@ func placeBlockAtCursor():
 	if SelectedBlock is not String:
 		var MapPos = Map.local_to_map(mousePos)
 		Map.set_cell(Vector2i(MapPos), 1, SelectedBlock)
-	#else:
-		#var block = OneWayBlock.instantiate()
-		#get_tree().current_scene.add_child(block)
-		#block.global_position = mousePos
 
 func removeBlockAtCursor():
 	var MapPos = Map.local_to_map(mousePos)

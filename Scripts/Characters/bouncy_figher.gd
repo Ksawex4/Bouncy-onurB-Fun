@@ -9,6 +9,7 @@ var HP = 25
 
 func _ready() -> void:
 	$Name.text = Cuntrul.Names.pick_random()
+	Cuntrul.OnurbCount += 1
 
 func _physics_process(delta: float) -> void:
 	
@@ -52,6 +53,7 @@ func AmIDead():
 		die()
 
 func _on_death_finished() -> void:
+	Cuntrul.OnurbCount -= 1
 	queue_free()
 
 func _on_attack_area_body_entered(body: Node2D) -> void:

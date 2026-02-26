@@ -18,6 +18,7 @@ func _ready() -> void:
 	$Name.text = Cuntrul.Names.pick_random()
 	Settings.connect("UpdateCollision", Callable(self, "_update_collision"))
 	_update_collision()
+	Cuntrul.OnurbCount += 1
 
 func _physics_process(delta: float) -> void:
 	if !is_on_floor() && !Cuntrul.OnurbsPaused:
@@ -72,4 +73,5 @@ func _on_win_area_body_entered(_body: Node2D) -> void:
 	$Win.play()
 
 func _on_death_finished() -> void:
+	Cuntrul.OnurbCount -= 1
 	queue_free()
