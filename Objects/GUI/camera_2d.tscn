@@ -30,7 +30,9 @@ Z - place a block
 X- remove a block
 Shift - move/zoom camera faster and spawn onurbs faster
 F1 - hide/show this label
-I - open the selection menu"
+I - open the selection menu
+< - Slow game down
+> - Speed game up"
 
 [node name="MobileControls" parent="CanvasLayer" unique_id=697814840 instance=ExtResource("2_4kmw6")]
 

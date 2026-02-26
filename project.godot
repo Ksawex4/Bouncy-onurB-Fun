@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Bouncy onurB Fun"
-config/version="0.1.1"
+config/version="0.2"
 config/tags=PackedStringArray("2d", "android", "game", "github", "indevelopment", "linux", "side_project", "windows")
 run/main_scene="res://Scenes/level.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
