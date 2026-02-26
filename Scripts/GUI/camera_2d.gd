@@ -1,5 +1,7 @@
 extends Camera2D
 
+@onready var joystick = $CanvasLayer/MobileControls/Joystick
+
 func _ready() -> void:
 	if OS.get_name() == "Android":
 		$CanvasLayer/Label.text = "ESC - quit game
@@ -15,14 +17,15 @@ F1 - hide/show this label
 I - open the selection menu"
 
 func _physics_process(delta: float) -> void:
-	var xAxis = Input.get_axis("camLeft", "camRight")
-	var yAxis = Input.get_axis("camUp", "camDown")
-	var run = 1
+	var axis = Vector2(Input.get_axis("camLeft", "camRight"), Input.get_axis("camUp", "camDown"))
+	if OS.get_name() == "Android":
+		axis = joystick.posVector
+	var run = 5
 	if Input.is_action_pressed("shift"):
-		run = 5
+		run = 1
 	if !Cuntrul.FollowNode:
-		position.x += 100 * xAxis * delta * run
-		position.y += 100 * yAxis * delta * run
+		position.x += 100 * axis.x * delta * run
+		position.y += 100 * axis.y * delta * run
 	elif Cuntrul.node != null:
 		position = Cuntrul.node.position
 	

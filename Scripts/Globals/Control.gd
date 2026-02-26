@@ -8,7 +8,6 @@ var OnurbsPaused = false
 var FollowNode = false
 var node
 var SelectedBounce = "Bouncy_onurB"
-var OneWayBlock = load("res://Objects/one_way_block.tscn")
 var AndroidPath = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Nova-Games/Bouncy-onurB-Fun/"
 
 func _ready() -> void:
@@ -59,10 +58,10 @@ func placeBlockAtCursor():
 	if SelectedBlock is not String:
 		var MapPos = Map.local_to_map(mousePos)
 		Map.set_cell(Vector2i(MapPos), 1, SelectedBlock)
-	else:
-		var block = OneWayBlock.instantiate()
-		get_tree().current_scene.add_child(block)
-		block.global_position = mousePos
+	#else:
+		#var block = OneWayBlock.instantiate()
+		#get_tree().current_scene.add_child(block)
+		#block.global_position = mousePos
 
 func removeBlockAtCursor():
 	var MapPos = Map.local_to_map(mousePos)

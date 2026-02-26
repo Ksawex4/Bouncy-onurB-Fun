@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ofdavayo646s"]
+[gd_scene format=3 uid="uid://ofdavayo646s"]
 
 [ext_resource type="Script" uid="uid://ncfecgg2vlrj" path="res://Scripts/Characters/bouncy_figher.gd" id="1_iunsq"]
 [ext_resource type="Texture2D" uid="uid://blxxaocc36x0r" path="res://Assets/Sprites/Characters/onurbFighter.jpg" id="2_hptsq"]
@@ -18,50 +18,50 @@ size = Vector2(31, 31)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxyy5"]
 size = Vector2(31, 31)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=367352884]
 collision_layer = 9
 script = ExtResource("1_iunsq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=764388238]
 texture_filter = 1
 position = Vector2(-6.67572e-06, 0)
 scale = Vector2(0.026, 0.026)
 texture = ExtResource("2_hptsq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=206482224]
 shape = SubResource("RectangleShape2D_2isr3")
 
-[node name="AttackArea" type="Area2D" parent="."]
+[node name="AttackArea" type="Area2D" parent="." unique_id=1151503258]
 collision_layer = 0
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1610408871]
 shape = SubResource("RectangleShape2D_ybg12")
 
-[node name="HitArea" type="Area2D" parent="."]
+[node name="HitArea" type="Area2D" parent="." unique_id=72604791]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=379556919]
 shape = SubResource("RectangleShape2D_1w510")
 
-[node name="Death" type="AudioStreamPlayer" parent="."]
+[node name="Death" type="AudioStreamPlayer" parent="." unique_id=497344388]
 stream = ExtResource("3_33l34")
 
-[node name="Attack" type="AudioStreamPlayer" parent="."]
+[node name="Attack" type="AudioStreamPlayer" parent="." unique_id=1785970059]
 stream = ExtResource("4_ufwu5")
 
-[node name="WinArea" type="Area2D" parent="."]
+[node name="WinArea" type="Area2D" parent="." unique_id=731432212]
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WinArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinArea" unique_id=1545523973]
 shape = SubResource("RectangleShape2D_hxyy5")
 
-[node name="Win" type="AudioStreamPlayer" parent="."]
+[node name="Win" type="AudioStreamPlayer" parent="." unique_id=1322796067]
 stream = ExtResource("5_sdxi7")
 
-[node name="Name" type="Label" parent="."]
+[node name="Name" type="Label" parent="." unique_id=1290212664]
 offset_left = -20.0
 offset_top = -38.0
 offset_right = 20.0
