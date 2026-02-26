@@ -131,11 +131,13 @@ texture_normal = ExtResource("15_f0umg")
 position = Vector2(488, 0)
 texture_normal = ExtResource("16_c0srt")
 action = "SpeedUp"
+visibility_mode = 1
 
 [node name="SpeedDown" type="TouchScreenButton" parent="." unique_id=2119370285]
 position = Vector2(384, 0)
 texture_normal = ExtResource("17_2ii18")
 action = "SpeedDown"
+visibility_mode = 1
 
 [connection signal="pressed" from="Joystick/Button" to="Joystick/Joyknob" method="_on_button_down"]
 [connection signal="released" from="Joystick/Button" to="Joystick/Joyknob" method="_on_button_up"]

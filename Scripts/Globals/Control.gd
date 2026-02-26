@@ -3,7 +3,7 @@ extends Node
 var Map: TileMapLayer
 var mousePos
 var SelectedBlock = Vector2i(1,0)
-var Names = ["Bob", "Bruno", "Burno", "Emix", "Ksawex", "Nova", "Soluś", "Arenka", "Benry", "Fency", "Pan Loduwka", "Toasty", "Bean Guy", "Marta", "Liściu", "Konrad", "Ralsei", "Kris", "Susie", "Lancer", "The Original         Starwalker", "Ballurb", "Gerson", "Niko", "Jack", "Jackenstein", "Proot", "Cursey", "Bouncy onurB", "Bruno ycnuoB", "Puro", "Ignac", "Ignasia", "Franek", "Julka", "Julek", "Kuba", "Dawid", "Kacper", "Mateusz", "Mint", "You", "Purple", "Orange", "Red", "Wine", "Green", "Yellow", "Duck", "Machine", "Killer Burger", "Burger", "John", "Shovel", "Feminine", "Hay", "Monster", "Amy", "Bomb", "Mother", "Launcher", "Fatblob", "Blank"]
+var Names = ["Bob", "Bruno", "Burno", "Emix", "Ksawex", "Nova", "Soluś", "Arenka", "Benry", "Fency", "Pan Loduwka", "Toasty", "Bean uy", "Marta", "Liściu", "Konrad", "Ralsei", "Kris", "Susie", "Lancer", "The Original         Starwalker", "Ballurb", "Gerson", "Niko", "Jack", "Jackenstein", "Proot", "Cursey", "Bouncy onurB", "Bruno ycnuoB", "Puro", "Ignac", "Ignasia", "Franek", "Julka", "Julek", "Kuba", "Dawid", "Kacper", "Mateusz", "Mint", "You", "Purple", "Orange", "Red", "Wine", "Green", "Yellow", "Duck", "Machine", "Killer Burger", "Burger", "John", "Shovel", "Feminine", "Hay", "Monster", "Amy", "Bomb", "Mother", "Launcher", "Fatblob", "Blank", "qStarRat", "DżiFoto", "NovaProot", "Isaac", "Magdalena Oroń", "Kartofel", "GG", "Your mom", "GiGi", "RziRzi", "DziDzi", "Martorek", "Kaczorek"]
 var OnurbsPaused = false
 var FollowNode = false
 var node
