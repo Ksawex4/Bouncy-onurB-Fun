@@ -14,7 +14,9 @@ A - place a block
 R - remove a block
 Shift - move/zoom camera faster and spawn onurbs faster
 F1 - hide/show this label
-I - open the selection menu"
+I - open the selection menu
+< - Slow game down
+> - Speed game up"
 
 func _physics_process(delta: float) -> void:
 	var axis = Vector2(Input.get_axis("camLeft", "camRight"), Input.get_axis("camUp", "camDown"))

@@ -62,6 +62,7 @@ shape = SubResource("RectangleShape2D_hxyy5")
 stream = ExtResource("5_sdxi7")
 
 [node name="Name" type="Label" parent="." unique_id=1290212664]
+z_index = 1
 offset_left = -20.0
 offset_top = -38.0
 offset_right = 20.0
